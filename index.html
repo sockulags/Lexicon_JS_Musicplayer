@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TuneToad</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600&family=Roboto:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+        <audio src="/audio/Avicii_Wake_Me_Up.mp3"></audio>
+      <div class="header">
+        <span class="tab"> < </span>
+        <h1 class="tab-name"></h1>
+        <span class="material-symbols-outlined search">search</span>
+      </div>
+      <div class="songs">
+     
+      </div>
+      <div class="mediaplayer">
+        <div class="img-container">
+          <img src="/img/avicii_wakemeup_image.jpg" />
+        </div>
+        <h2 class="song-name">Wake me up</h2>
+        <h3 class="artist">Avicii</h3>
+        <div class="elapsed-time">
+          <span class="current-time">0:00</span>
+          <input
+            class="time-input"
+            type="range"
+            min="0"
+            max="1"            
+            step="0.01"
+          />
+          <span class="time-length">3:20</span>
+        </div>
+        <div class="control-btns">
+          <span class="material-symbols-outlined loop-btn"> repeat </span>
+          <span class="material-symbols-outlined prev-btn">
+            skip_previous
+          </span>
+          <span class="material-symbols-outlined play-btn"> play_circle </span>
+          <span class="material-symbols-outlined next-btn"> skip_next </span>
+          <span class="material-symbols-outlined shuffle-btn"> shuffle </span>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js" type="module"></script>
+  </body>
+</html>
