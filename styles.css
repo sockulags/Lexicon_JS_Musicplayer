@@ -104,11 +104,8 @@ img {
 
 .elapsed-time span{
     font-size: 12px;
-    letter-spacing: 0.7px;
-    
+    letter-spacing: 0.7px;    
 }
-
-
 
 input[type="range"] {
     background-color: var(--secondary-text-color); 
@@ -118,7 +115,6 @@ input[type="range"] {
     height: 4px; 
     cursor: pointer;
     outline: none;
-    -webkit-appearance: none; 
     align-self: center;
     width: 100%;
     margin: 0 6px;
