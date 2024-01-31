@@ -1,5 +1,5 @@
-const IMG = "/img/";
-const AUDIO = "/audio/";
+const IMG = "img/";
+const AUDIO = "audio/";
 const MP3 = ".mp3";
 const JPG = ".jpg";
 
