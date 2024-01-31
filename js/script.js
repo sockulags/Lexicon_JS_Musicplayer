@@ -16,16 +16,18 @@ const shuffleBtn = controls.querySelector(".shuffle-btn");
 const playButton = controls.querySelector(".mediaplayer .play-btn");
 const nextSong = controls.querySelector(".next-btn");
 const previousSong = controls.querySelector(".prev-btn");
-const inputRange = document.querySelector("input");
+const inputRange = document.querySelector(".time-input");
 const songTimeElapsed = document.querySelector(".current-time");
 const songLength = document.querySelector(".time-length");
 const root = document.querySelector(":root");
+const searchInput = document.querySelector(".search-input");
+const searchButton = document.querySelector(".search");
 let shuffle = false;
 let loop=false;
 
 let currPlayBtn = null;
 let isMouseDownOnInputRange = false;
-
+const debouncedFilterSongs = debounce(filterSongs, 300);
 document.addEventListener("DOMContentLoaded", initialize);
 
 inputRange.addEventListener("mousedown", (e) => {
@@ -49,6 +51,46 @@ function initialize() {
   shuffleBtn.addEventListener("click", handleShuffleButtonClick)
   loopBtn.addEventListener("click", handleLoopButtonClick)
 }
+
+
+searchButton.addEventListener("click", function() {  
+    searchInput.disabled = false; 
+    searchInput.focus(); 
+  });
+
+  searchInput.addEventListener("input", debouncedFilterSongs);
+  searchInput.addEventListener("blur", () => {
+    searchInput.value = ''; 
+    searchInput.disabled = true;
+    debouncedFilterSongs(); 
+  });
+
+function filterSongs() {
+    const searchQuery = searchInput.value.toLowerCase();
+    const songContainers = document.querySelectorAll(".song-container");
+  
+    songContainers.forEach(container => {
+      const songTitle = container.querySelector(".song-name").textContent.toLowerCase();
+      const artistName = container.querySelector(".artist").textContent.toLowerCase();  
+      
+      if (songTitle.includes(searchQuery) || artistName.includes(searchQuery)) {
+        container.style.display = ''; 
+      } else {
+        container.style.display = 'none'; 
+      }
+    });
+  }
+
+  function debounce(func, delay) {
+    let debounceTimer;
+    return function() {
+      const context = this;
+      const args = arguments;
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => func.apply(context, args), delay);
+    };
+  }
+  
 
 function togglePlay() {
   const songId = mediaPlayer.getAttribute("song-id");
@@ -229,6 +271,7 @@ function setTimeElapsed() {
   if (currentTimeInSeconds >= audioPlayer.duration) {
     playNextSong();
   }
+  
   root.style.setProperty(
     "--value",
     `${(currentTimeInSeconds / audioPlayer.duration) * 100}%`
@@ -248,6 +291,11 @@ function populateSongList() {
 }
 
 function switchView() {
+   searchButton.classList.toggle("hider");
+   if(searchButton.classList.contains("hider"))
+   searchInput.value = "Playlist"
+else
+    searchInput.value = "";
   songList.classList.toggle("hider");
 }
 

@@ -286,6 +286,25 @@ span{
 }
 
 
+.search-input{
+    background-color:#2e2e2e;
+    text-align:left;
+    border: none;
+    height: 30px;
+width: 100%;
+    padding-inline: 10px;
+    font-size: 16px; 
+    font-style: italic;
+}
+
+.search-input:focus{    
+    outline: none;     
+    border-bottom:2px solid #f8f8f8;
+    color: var(--secondary-text-color-);
+    text-align: right;
+    font-style: normal;
+}
+
 
 
 
