@@ -1,12 +1,12 @@
 import { buttons } from "./constants.js";
 import { songs as songs1 } from "./songs.js";
-import { songs2 } from "./songs2.js"
+// import { songs2 } from "./songs2.js"
 
 const songs = [];
 
 songs1.forEach(s => songs.push(s));
-if(songs2)
-songs2.forEach(s=>songs.push(s));
+
+// songs2.forEach(s=>songs.push(s));
 
 const mediaPlayer = document.querySelector(".mediaplayer");
 
