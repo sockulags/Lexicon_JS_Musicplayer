@@ -21,4 +21,8 @@ MusicPlayer utilizes the HTML `<audio>` element to handle audio playback. The co
 - **Automatic Playback**: Automatically plays the next song in the list upon completion of the current song.
 - **Shuffle Play**: Option to shuffle the playlist, ensuring a unique listening experience.
 ---
-
+### Moving forward / Possible updates
+- **Volume control**: The ability to adjust volume interactively and ability to mute on click.
+- **Playlists**: Be able to make your own playlist - need more songs for that though.
+- **Fetch songs from some api**: More songs, more options.
+- **Expand UI**: Right now it's like a prototype design encapsulated to mimick small screen devices. Make desktop friendly and remove the container.
