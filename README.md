@@ -13,9 +13,10 @@ MusicPlayer utilizes the HTML `<audio>` element to handle audio playback. The co
 ---
 
 ### Features
-- **Multi-Track Playlist**: Supports at least six different songs, complete with album covers and locally stored audio files.
+- **Multi-Track Playlist**: Supports different songs, complete with album covers and locally stored audio files.
 - **Dynamic Playlist View**: A section of the app displays the current playlist, allowing users to select and play songs.
 - **Current Song Display**: The app shows information about the song currently playing, including title, artist, and album cover.
+- **User Friendly Search Bar**: Click the magnifying glass and start type - automatically shows the option you have left based on your search criteria.
 - **Interactive Controls**: Custom-built play, pause, next, previous, loop, and shuffle controls.
 - **Progress Bar**: A slider to indicate song progress and to seek within the song.
 - **Automatic Playback**: Automatically plays the next song in the list upon completion of the current song.
